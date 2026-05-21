@@ -81,7 +81,7 @@ export default function CheckoutSummary() {
       {/* CTA */}
       <div className="mt-5">
         <a
-          href={`https://wa.me/08052350516?text=${encodeURIComponent(
+          href={`https://wa.me/08080881473?text=${encodeURIComponent(
             [
               "Hi Lamdot 👆",
               "I’d like to place an order.",
