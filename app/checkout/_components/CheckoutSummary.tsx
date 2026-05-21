@@ -3,7 +3,7 @@
 import React from "react";
 import { useCart } from "@/src/providers/CartProvider";
 
-const WHATSAPP_PHONE = "08080881473";
+const WHATSAPP_PHONE = "2348080881473";
 
 export default function CheckoutSummary() {
   const { items, subtotal, totalItems } = useCart();
