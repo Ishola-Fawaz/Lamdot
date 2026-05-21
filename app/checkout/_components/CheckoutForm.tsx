@@ -8,6 +8,7 @@ import { buildWhatsAppLink } from "@/src/lib/whatsapp";
 
 const WHATSAPP_PHONE = "08052350516";
 
+
 type PaymentMethod = "bank_transfer" | "cod";
 
 type WhatsAppPayload = {

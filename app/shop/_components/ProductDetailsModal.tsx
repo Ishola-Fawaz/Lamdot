@@ -2,11 +2,21 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { Minus, Plus, MessageCircle, ShoppingBag, Wallet, Truck } from "lucide-react";
+import {
+  Minus,
+  Plus,
+  MessageCircle,
+  ShoppingBag,
+  Wallet,
+  Truck,
+} from "lucide-react";
 
 import type { CartProduct } from "@/src/providers/CartProvider";
 import { useCart } from "@/src/providers/CartProvider";
-import { buildWhatsAppOrderMessage, buildWhatsAppLink } from "@/src/lib/whatsapp";
+import {
+  buildWhatsAppOrderMessage,
+  buildWhatsAppLink,
+} from "@/src/lib/whatsapp";
 
 export default function ProductDetailsModal({
   open,
@@ -53,10 +63,16 @@ export default function ProductDetailsModal({
       <div className="w-full max-w-xl rounded-2xl bg-white p-5 shadow-xl">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <h3 className="truncate text-lg font-bold text-gray-900">{product.name}</h3>
+            <h3 className="truncate text-lg font-bold text-gray-900">
+              {product.name}
+            </h3>
             <div className="mt-1 flex items-center gap-2 text-sm text-gray-600">
-              <span className="text-orange-600 font-extrabold">₹{product.price}</span>
-              {product.categoryId ? <span className="text-gray-400">• {product.categoryId}</span> : null}
+              <span className="text-orange-600 font-extrabold">
+                ₹{product.price}
+              </span>
+              {product.categoryId ? (
+                <span className="text-gray-400">• {product.categoryId}</span>
+              ) : null}
             </div>
           </div>
           <button
@@ -73,7 +89,11 @@ export default function ProductDetailsModal({
           <div className="aspect-[4/3] overflow-hidden rounded-xl bg-gray-50">
             {product.imageSrc ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={product.imageSrc} alt={product.name} className="h-full w-full object-cover" />
+              <img
+                src={product.imageSrc}
+                alt={product.name}
+                className="h-full w-full object-cover"
+              />
             ) : (
               <div className="flex h-full w-full items-center justify-center text-sm font-semibold text-gray-400">
                 No Image
@@ -88,16 +108,22 @@ export default function ProductDetailsModal({
                   <Truck className="w-4 h-4 text-orange-600" />
                   Delivery options
                 </div>
-                <div className="text-xs font-semibold text-gray-500">Fast dispatch</div>
+                <div className="text-xs font-semibold text-gray-500">
+                  Fast dispatch
+                </div>
               </div>
               <div className="mt-2 text-sm text-gray-600 flex items-start gap-2">
                 <Wallet className="w-4 h-4 mt-0.5 text-orange-600" />
-                <span>Choose Bank transfer or Payment on delivery at checkout.</span>
+                <span>
+                  Choose Bank transfer or Payment on delivery at checkout.
+                </span>
               </div>
             </div>
 
             <div>
-              <label className="text-sm font-semibold text-gray-900">Quantity</label>
+              <label className="text-sm font-semibold text-gray-900">
+                Quantity
+              </label>
               <div className="mt-2 flex items-center gap-3">
                 <button
                   type="button"
@@ -129,7 +155,9 @@ export default function ProductDetailsModal({
               <ShoppingBag className="w-4 h-4 text-orange-600" />
               Add this quantity to cart
             </div>
-            <div className="text-sm font-bold text-orange-700">₦{product.price * qty}</div>
+            <div className="text-sm font-bold text-orange-700">
+              ₦{product.price * qty}
+            </div>
           </div>
           <div className="mt-3 flex gap-2">
             <button
@@ -181,4 +209,3 @@ export default function ProductDetailsModal({
     </div>
   );
 }
-
