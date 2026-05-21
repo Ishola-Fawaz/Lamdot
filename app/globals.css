@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: rgb(251 146 60);
+    --color-dark: oklch(0.21 0.034 264.665);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+  }
+}
+
+:root {
+  --primary: rgb(251 146 60);
+  --primary-rgb: 251, 146, 60;
+  --white: rgb(255 255 255);
+  --white-rgb: 255, 255, 255;
+  --dark: oklch(0.21 0.034 264.665);
+}
+
+html {
+  font-family: var(--font-sans), Arial, sans-serif;
+}
+
+body {
+  font-family: inherit;
+}
